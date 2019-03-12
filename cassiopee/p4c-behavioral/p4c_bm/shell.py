@@ -22,6 +22,7 @@ import smart
 import shutil
 from pkg_resources import resource_string
 import json
+import cPickle as pickle
 
 
 def get_parser():
@@ -130,6 +131,14 @@ def main():
                                            args.meta_config,
                                            args.public_inc_path,
                                            dump_yaml = args.dump_yaml)
+
+    # @OVS: dumps the render dict for flow_type_checker.py
+    pickle.dump(render_dict, open(gen_dir+"/dict.pickle", "wb"))
+
+    # @OVS: optimizer configurations
+    # @Shahbaz: enumerate number of adjustment actions and based on that
+    # set this to true or false.
+    render_dict["OPT_INLINE_EDITING"] = False
 
     if args.openflow_mapping_dir and args.openflow_mapping_mod:
         sys.path.append(args.openflow_mapping_dir)
