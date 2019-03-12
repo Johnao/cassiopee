@@ -18,8 +18,8 @@ $ cd ..
 
 ## Notes personnelles
 
-Open vSwitch v2.4.0 (modifiée)
-DPDK 19.02 cross-compilé depuis un Fedora 29 pour une architecture ARMv8.
+* Open vSwitch v2.4.0 (modifiée)
+* DPDK 19.02 cross-compilé depuis un Fedora 29 pour une architecture ARMv8.
 
 
 -- En cours de rédaction --
